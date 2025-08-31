@@ -8,3 +8,4 @@ num_layers = 2
 epochs = 10
 lr=0.001
 lamb_l1 = 0.01
+num_batches_to_train=30

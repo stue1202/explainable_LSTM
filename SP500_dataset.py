@@ -5,7 +5,7 @@ import torch
 from torch.utils.data import TensorDataset, DataLoader
 from sklearn.preprocessing import MinMaxScaler
 from myconstant import *
-def SP500_split(seq_length, input_dim):
+def SP500_split(seq_length):
     # 步驟1：下載更長的 S&P 500 指數數據
     print("正在下載 S&P 500 指數數據...")
     # 為了確保所有資料集都有足夠的序列，我們下載到 2024 年底
@@ -69,5 +69,7 @@ def SP500_split(seq_length, input_dim):
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
     test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
-    
+    print(f"Batch size: {train_loader.batch_size}")
+    print(X_train.shape, y_train.shape)
+
     return train_loader, val_loader, test_loader, scaler

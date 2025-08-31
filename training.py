@@ -8,10 +8,13 @@ from explainable_KAN import KANLSTMModel # 請確保這個模型定義在你的�
 from torch import nn, optim
 from SP500_dataset import SP500_split
 from myconstant import *
+from itertools import islice
+
+import tqdm
 # 訓練模型
 #from torch.utils.tensorboard import SummaryWriter
 #writer = SummaryWriter('runs/kan_lstm_exp')
-train_loader, val_loader, test_loader, scaler = SP500_split(seq_length, input_dim)
+train_loader, val_loader, test_loader, scaler = SP500_split(seq_length)
 model = KANLSTMModel(input_dim, hidden_dim, output_dim, num_layers)
 criterion = nn.MSELoss()
 optimizer = optim.Adam(model.parameters(), lr)
@@ -21,31 +24,22 @@ for epoch in range(epochs):
     print(f"Epoch {epoch+1}/{epochs}")
     model.train()
     train_loss = 0
-    for X_train, y_train in train_loader:
+    for X_train, y_train in tqdm.tqdm(islice(train_loader, num_batches_to_train)):
         optimizer.zero_grad()
         outputs = model(X_train)
         loss = criterion(outputs, y_train)
-        l1_regularization = torch.tensor(0., requires_grad=True)
-        for name, param in model.named_parameters():
-            if 'kan_activation.layers.0.spline_weight' in name:
-                l1_regularization = l1_regularization + torch.sum(torch.abs(param))
-        loss += lamb_l1 * l1_regularization
+        #l1_regularization = torch.tensor(0.0, device=X_train.device)
+        #for name, param in model.named_parameters():
+        #    if 'kan_activation.layers.0.spline_weight' in name:
+        #        l1_regularization += torch.sum(torch.abs(param))
+        #loss += lamb_l1 * l1_regularization
+        print(f"Batch Loss: {loss.item():.4f}")
         loss.backward()
         optimizer.step()
         train_loss += loss.item()
     avg_train_loss = train_loss / len(train_loader)
 
-    #驗證階段
-    model.eval()
-    with torch.no_grad():
-        val_loss = 0
-        for X_val, y_val in val_loader:
-            outputs = model(X_val)
-            loss = criterion(outputs, y_val)
-            val_loss += loss.item()
-        avg_val_loss = val_loss / len(val_loader)
-
-    print(f'Epoch [{epoch + 1}/{epochs}], Train Loss: {avg_train_loss:.4f}, Validation Loss: {avg_val_loss:.4f}')
+    print(f'Epoch [{epoch + 1}/{epochs}], Train Loss: {avg_train_loss:.4f}')
 #writer.close()
 
 # 儲存模型

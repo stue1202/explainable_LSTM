@@ -19,9 +19,6 @@ class KANLSTMCell(nn.Module):
         self.bias_ih = Parameter(torch.Tensor(4 * hidden_size))
         self.bias_hh = Parameter(torch.Tensor(4 * hidden_size))
 
-        # 用 KANLinear 取代傳統的激活函數
-        # i_gate, f_gate, o_gate 仍使用 sigmoid
-        # 但 'g' 門 (用來更新記憶單元) 則使用 KANLinear
         self.sigmoid = nn.Sigmoid()
         self.kan_activation = KAN([hidden_size,hidden_size])
         
@@ -41,24 +38,14 @@ class KANLSTMCell(nn.Module):
         gates = (torch.matmul(input, self.weight_ih.t()) + self.bias_ih +
                  torch.matmul(h_prev, self.weight_hh.t()) + self.bias_hh)
 
-        # 2. 分割門
-        # 將 gates 分成四個部分：輸入門 (i)、遺忘門 (f)、候選記憶單元 (g)、輸出門 (o)
         input_gate, forget_gate, cell_gate, output_gate = gates.chunk(4, 1)
 
-        # 3. KAN 應用於 cell_gate
-        # 傳統 LSTM 使用 tanh(cell_gate)
-        # 我們在這裡用 kan_activation(cell_gate)
         input_gate = self.sigmoid(input_gate)
         forget_gate = self.sigmoid(forget_gate)
         output_gate = self.sigmoid(output_gate)
         kan_output = self.kan_activation(cell_gate)
         
-        # 4. 更新記憶單元
         c_next = forget_gate * c_prev + input_gate * kan_output
-        #print("passed kan lstm cell")
-        # 5. 更新隱藏狀態
-        # 這裡的激活函數也可以替換為 KAN，但為了簡化和示範可解釋性，
-        # 我們只在 cell_gate 上使用
         h_next = output_gate * self.tanh(c_next)
         
         return h_next, c_next
@@ -76,11 +63,9 @@ class KANLSTMModel(nn.Module):
         c_t = [torch.zeros(batch_size, self.hidden_dim).to(x.device) for _ in range(self.num_layers)]
 
         for t in range(x.size(1)):
-            #print(f"Time step {t}")
             input_t = x[:, t, :]
             for layer in range(self.num_layers):
                 h_t[layer], c_t[layer] = self.cells[layer](input_t, (h_t[layer], c_t[layer]))
                 input_t = h_t[layer]
-
         out = self.fc(h_t[-1])
         return out

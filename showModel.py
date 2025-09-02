@@ -1,56 +1,35 @@
-import pandas as pd
-import yfinance as yf
-import numpy as np
 import torch
-from torch.utils.data import TensorDataset, DataLoader
-from sklearn.preprocessing import MinMaxScaler
-from explainable_KAN import KANLSTMModel # 請確保這個模型定義在你的檔案中
-from torch import nn, optim
-from SP500_dataset import SP500_split
+from kan import KAN
+import matplotlib.pyplot as plt
 from myconstant import *
-from itertools import islice
 
-import tqdm
-# 訓練模型
-#from torch.utils.tensorboard import SummaryWriter
-#writer = SummaryWriter('runs/kan_lstm_exp')
-train_loader, val_loader, test_loader, scaler = SP500_split(seq_length)
-model = KANLSTMModel(input_dim, hidden_dim, output_dim, num_layers)
-criterion = nn.MSELoss()
-optimizer = optim.Adam(model.parameters(), lr)
+# 1. 載入完整的 KANLSTMModel 狀態字典
+model_path = 'best_model_state_dict.pth'
+state_dict = torch.load(model_path)
 
-# --- 訓練與驗證迴圈 ---
-model.train()
-for epoch in range(epochs):
-    print(f"Epoch {epoch+1}/{epochs}")
-    train_loss = 0
-    for X_train, y_train in tqdm.tqdm(train_loader):
-        optimizer.zero_grad()
-        outputs = model(X_train)
-        loss = criterion(outputs, y_train)
-        #l1_regularization = torch.tensor(0.0, device=X_train.device)
-        #for name, param in model.named_parameters():
-        #    if 'kan_activation.layers.0.spline_weight' in name:
-        #        l1_regularization += torch.sum(torch.abs(param))
-        #loss += lamb_l1 * l1_regularization
-        print(f"loss: {loss.item()}")
-        loss.backward()
-        optimizer.step()
-        train_loss += loss.item()
-    avg_train_loss = train_loss / len(train_loader)
+# 2. 提取 KAN 網路的狀態字典，並移除前綴
+kan_state_dict_cell_0 = {}
+for key, value in state_dict.items():
+    print(f"Extracting key: {key}")
+    if 'kan_activation.' in key and 'cells.0.' in key:
+        
+        new_key = key.replace('cells.0.kan_activation.', '')
+        kan_state_dict_cell_0[new_key] = value
 
-    print(f'Epoch [{epoch + 1}/{epochs}], Train Loss: {avg_train_loss:.4f}')
+# 3. 創建一個「乾淨」的 KAN 實例，並立即進行剪枝
+# 這樣可以確保內部狀態 (如 alpha_mask) 被正確建立
+# 這裡我們將所有連接修剪到0% (因為我們只想要狀態變數，不真的要剪枝)
+kan_model_0 = KAN([hidden_dim, hidden_dim])
+print(kan_model_0)
 
-# 儲存模型
-torch.save(model.state_dict(), 'kan_lstm_model_state_dict.pth')
-print("模型已成功儲存！")
-# --- 最終測試 ---
-model.eval()
-with torch.no_grad():
-    total_test_loss = 0
-    for X_test, y_test in test_loader:
-        outputs = model(X_test)
-        loss = criterion(outputs, y_test)
-        total_test_loss += loss.item()
-    avg_test_loss = total_test_loss / len(test_loader)
-    print(f'eval loss: {avg_test_loss:.4f}')
+# 4. 載入訓練好的權重
+# 現在 kan_model_0 已經有了 plot() 所需的內部狀態，可以安全地載入權重了
+
+# 5. 進行一次前向傳播，讓模型「看到」數據
+x = torch.rand(30, 16) 
+kan_model_0(x)
+
+# 6. 現在可以安全地繪製圖形
+print("正在繪製 KAN 網路...")
+kan_model_0.plot()
+plt.show()

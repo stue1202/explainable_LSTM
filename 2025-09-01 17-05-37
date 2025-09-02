@@ -1,0 +1,93 @@
+2025-09-01 17:05:37 - yfinance - DEBUG - Entering download()
+2025-09-01 17:05:37 - yfinance - DEBUG - Disabling multithreading because DEBUG logging enabled
+2025-09-01 17:05:37 - yfinance - DEBUG -  Entering history()
+2025-09-01 17:05:37 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_tz_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2025-09-01 17:05:37 - peewee - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_tz_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['^GSPC', 1, 0])
+2025-09-01 17:05:37 - yfinance - DEBUG -   Entering history()
+2025-09-01 17:05:37 - yfinance - DEBUG - ^GSPC: Yahoo GET parameters: {'period1': '2014-01-01 00:00:00-05:00', 'period2': '2025-01-01 00:00:00-05:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-09-01 17:05:37 - yfinance - DEBUG -    Entering get()
+2025-09-01 17:05:37 - yfinance - DEBUG -     Entering _make_request()
+2025-09-01 17:05:37 - yfinance - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/^GSPC
+2025-09-01 17:05:37 - yfinance - DEBUG - params=frozendict.frozendict({'period1': 1388552400, 'period2': 1735707600, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2025-09-01 17:05:37 - yfinance - DEBUG -      Entering _get_cookie_and_crumb()
+2025-09-01 17:05:37 - yfinance - DEBUG - cookie_mode = 'basic'
+2025-09-01 17:05:37 - yfinance - DEBUG -       Entering _get_cookie_and_crumb_basic()
+2025-09-01 17:05:37 - yfinance - DEBUG -        Entering _get_cookie_basic()
+2025-09-01 17:05:37 - yfinance - DEBUG -         Entering _load_cookie_curlCffi()
+2025-09-01 17:05:37 - peewee - DEBUG - ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2025-09-01 17:05:37 - peewee - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['curlCffi', 1, 0])
+2025-09-01 17:05:37 - yfinance - DEBUG -         Exiting _load_cookie_curlCffi()
+2025-09-01 17:05:37 - yfinance - DEBUG - reusing persistent cookie
+2025-09-01 17:05:37 - yfinance - DEBUG -        Exiting _get_cookie_basic()
+2025-09-01 17:05:37 - yfinance - DEBUG -        Entering _get_crumb_basic()
+2025-09-01 17:05:37 - yfinance - DEBUG -         Entering _get_cookie_basic()
+2025-09-01 17:05:37 - yfinance - DEBUG - reusing cookie
+2025-09-01 17:05:37 - yfinance - DEBUG -         Exiting _get_cookie_basic()
+2025-09-01 17:05:38 - yfinance - DEBUG - crumb = 'gLb4Ra8Zb6b'
+2025-09-01 17:05:38 - yfinance - DEBUG -        Exiting _get_crumb_basic()
+2025-09-01 17:05:38 - yfinance - DEBUG -       Exiting _get_cookie_and_crumb_basic()
+2025-09-01 17:05:38 - yfinance - DEBUG -      Exiting _get_cookie_and_crumb()
+2025-09-01 17:05:38 - yfinance - DEBUG - response code=200
+2025-09-01 17:05:38 - yfinance - DEBUG -     Exiting _make_request()
+2025-09-01 17:05:38 - yfinance - DEBUG -    Exiting get()
+2025-09-01 17:05:38 - yfinance - DEBUG - ^GSPC: yfinance received OHLC data: 2014-01-02 14:30:00 -> 2024-12-31 14:30:00
+2025-09-01 17:05:38 - yfinance - DEBUG - ^GSPC: OHLC after cleaning: 2014-01-02 09:30:00-05:00 -> 2024-12-31 09:30:00-05:00
+2025-09-01 17:05:38 - yfinance - DEBUG - ^GSPC: OHLC after combining events: 2014-01-02 00:00:00-05:00 -> 2024-12-31 00:00:00-05:00
+2025-09-01 17:05:38 - yfinance - DEBUG - ^GSPC: yfinance returning OHLC: 2014-01-02 00:00:00-05:00 -> 2024-12-31 00:00:00-05:00
+2025-09-01 17:05:38 - yfinance - DEBUG -   Exiting history()
+2025-09-01 17:05:38 - yfinance - DEBUG -  Exiting history()
+2025-09-01 17:05:38 - yfinance - DEBUG - Exiting download()
+2025-09-01 17:05:40 - root - INFO - Epoch [1/100], Train Loss: 0.0588
+2025-09-01 17:05:40 - root - INFO - Epoch [1/100], Validation Loss: 0.0367
+2025-09-01 17:05:40 - root - INFO - 穝程ㄎ家纗
+2025-09-01 17:05:40 - root - INFO - Epoch [2/100], Train Loss: 0.0118
+2025-09-01 17:05:40 - root - INFO - Epoch [2/100], Validation Loss: 0.0114
+2025-09-01 17:05:40 - root - INFO - 穝程ㄎ家纗
+2025-09-01 17:05:41 - root - INFO - Epoch [3/100], Train Loss: 0.0096
+2025-09-01 17:05:41 - root - INFO - Epoch [3/100], Validation Loss: 0.0094
+2025-09-01 17:05:41 - root - INFO - 穝程ㄎ家纗
+2025-09-01 17:05:42 - root - INFO - Epoch [4/100], Train Loss: 0.0093
+2025-09-01 17:05:42 - root - INFO - Epoch [4/100], Validation Loss: 0.0090
+2025-09-01 17:05:42 - root - INFO - 穝程ㄎ家纗
+2025-09-01 17:05:42 - root - INFO - Epoch [5/100], Train Loss: 0.0091
+2025-09-01 17:05:42 - root - INFO - Epoch [5/100], Validation Loss: 0.0087
+2025-09-01 17:05:42 - root - INFO - 穝程ㄎ家纗
+2025-09-01 17:05:43 - root - INFO - Epoch [6/100], Train Loss: 0.0089
+2025-09-01 17:05:43 - root - INFO - Epoch [6/100], Validation Loss: 0.0084
+2025-09-01 17:05:43 - root - INFO - 穝程ㄎ家纗
+2025-09-01 17:05:44 - root - INFO - Epoch [7/100], Train Loss: 0.0089
+2025-09-01 17:05:44 - root - INFO - Epoch [7/100], Validation Loss: 0.0082
+2025-09-01 17:05:44 - root - INFO - 穝程ㄎ家纗
+2025-09-01 17:05:44 - root - INFO - Epoch [8/100], Train Loss: 0.0088
+2025-09-01 17:05:44 - root - INFO - Epoch [8/100], Validation Loss: 0.0081
+2025-09-01 17:05:44 - root - INFO - 穝程ㄎ家纗
+2025-09-01 17:05:45 - root - INFO - Epoch [9/100], Train Loss: 0.0087
+2025-09-01 17:05:45 - root - INFO - Epoch [9/100], Validation Loss: 0.0081
+2025-09-01 17:05:45 - root - INFO - 瑻み璸计竟: 1/5
+2025-09-01 17:05:46 - root - INFO - Epoch [10/100], Train Loss: 0.0087
+2025-09-01 17:05:46 - root - INFO - Epoch [10/100], Validation Loss: 0.0080
+2025-09-01 17:05:46 - root - INFO - 穝程ㄎ家纗
+2025-09-01 17:05:46 - root - INFO - Epoch [11/100], Train Loss: 0.0087
+2025-09-01 17:05:46 - root - INFO - Epoch [11/100], Validation Loss: 0.0081
+2025-09-01 17:05:46 - root - INFO - 瑻み璸计竟: 1/5
+2025-09-01 17:05:47 - root - INFO - Epoch [12/100], Train Loss: 0.0087
+2025-09-01 17:05:47 - root - INFO - Epoch [12/100], Validation Loss: 0.0080
+2025-09-01 17:05:47 - root - INFO - 穝程ㄎ家纗
+2025-09-01 17:05:48 - root - INFO - Epoch [13/100], Train Loss: 0.0087
+2025-09-01 17:05:48 - root - INFO - Epoch [13/100], Validation Loss: 0.0081
+2025-09-01 17:05:48 - root - INFO - 瑻み璸计竟: 1/5
+2025-09-01 17:05:48 - root - INFO - Epoch [14/100], Train Loss: 0.0086
+2025-09-01 17:05:48 - root - INFO - Epoch [14/100], Validation Loss: 0.0081
+2025-09-01 17:05:48 - root - INFO - 瑻み璸计竟: 2/5
+2025-09-01 17:05:49 - root - INFO - Epoch [15/100], Train Loss: 0.0087
+2025-09-01 17:05:49 - root - INFO - Epoch [15/100], Validation Loss: 0.0081
+2025-09-01 17:05:49 - root - INFO - 瑻み璸计竟: 3/5
+2025-09-01 17:05:50 - root - INFO - Epoch [16/100], Train Loss: 0.0086
+2025-09-01 17:05:50 - root - INFO - Epoch [16/100], Validation Loss: 0.0080
+2025-09-01 17:05:50 - root - INFO - 瑻み璸计竟: 4/5
+2025-09-01 17:05:50 - root - INFO - Epoch [17/100], Train Loss: 0.0086
+2025-09-01 17:05:50 - root - INFO - Epoch [17/100], Validation Loss: 0.0080
+2025-09-01 17:05:50 - root - INFO - 瑻み璸计竟: 5/5
+2025-09-01 17:05:50 - root - INFO - 喷靡穕ア硈尿 epoch ⊿Τэ到氨ゎ癡絤
+2025-09-01 17:05:50 - root - INFO - 家Θ纗
+2025-09-01 17:05:50 - root - INFO - eval loss: 0.0413

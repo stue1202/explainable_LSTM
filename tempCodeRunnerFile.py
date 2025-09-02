@@ -1,1 +1,1 @@
-hidden_dim
+        print(outputs.shape, y_train.shape)

@@ -1,0 +1,64 @@
+2025-09-03 12:02:10 - yfinance - DEBUG - Entering download()
+2025-09-03 12:02:10 - yfinance - DEBUG - Disabling multithreading because DEBUG logging enabled
+2025-09-03 12:02:10 - yfinance - DEBUG -  Entering history()
+2025-09-03 12:02:10 - peewee - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_tz_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['^GSPC', 1, 0])
+2025-09-03 12:02:10 - yfinance - DEBUG -   Entering history()
+2025-09-03 12:02:10 - yfinance - DEBUG - ^GSPC: Yahoo GET parameters: {'period1': '2014-01-01 00:00:00-05:00', 'period2': '2025-01-01 00:00:00-05:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-09-03 12:02:10 - yfinance - DEBUG - ^GSPC: yfinance received OHLC data: 2014-01-02 14:30:00 -> 2024-12-31 14:30:00
+2025-09-03 12:02:10 - yfinance - DEBUG - ^GSPC: OHLC after cleaning: 2014-01-02 09:30:00-05:00 -> 2024-12-31 09:30:00-05:00
+2025-09-03 12:02:10 - yfinance - DEBUG - ^GSPC: OHLC after combining events: 2014-01-02 00:00:00-05:00 -> 2024-12-31 00:00:00-05:00
+2025-09-03 12:02:10 - yfinance - DEBUG - ^GSPC: yfinance returning OHLC: 2014-01-02 00:00:00-05:00 -> 2024-12-31 00:00:00-05:00
+2025-09-03 12:02:10 - yfinance - DEBUG -   Exiting history()
+2025-09-03 12:02:10 - yfinance - DEBUG -  Exiting history()
+2025-09-03 12:02:10 - yfinance - DEBUG - Exiting download()
+2025-09-03 12:02:14 - root - INFO - Epoch [1/100], Train Loss: 0.0335
+2025-09-03 12:02:14 - root - INFO - Epoch [1/100], Validation Loss: 0.0364
+2025-09-03 12:02:14 - root - INFO - update best model。
+2025-09-03 12:02:17 - root - INFO - Epoch [2/100], Train Loss: 0.0292
+2025-09-03 12:02:17 - root - INFO - Epoch [2/100], Validation Loss: 0.0280
+2025-09-03 12:02:17 - root - INFO - update best model。
+2025-09-03 12:02:20 - root - INFO - Epoch [3/100], Train Loss: 0.0229
+2025-09-03 12:02:20 - root - INFO - Epoch [3/100], Validation Loss: 0.0184
+2025-09-03 12:02:20 - root - INFO - update best model。
+2025-09-03 12:02:23 - root - INFO - Epoch [4/100], Train Loss: 0.0143
+2025-09-03 12:02:23 - root - INFO - Epoch [4/100], Validation Loss: 0.0084
+2025-09-03 12:02:23 - root - INFO - update best model。
+2025-09-03 12:02:26 - root - INFO - Epoch [5/100], Train Loss: 0.0075
+2025-09-03 12:02:26 - root - INFO - Epoch [5/100], Validation Loss: 0.0034
+2025-09-03 12:02:26 - root - INFO - update best model。
+2025-09-03 12:02:29 - root - INFO - Epoch [6/100], Train Loss: 0.0040
+2025-09-03 12:02:29 - root - INFO - Epoch [6/100], Validation Loss: 0.0019
+2025-09-03 12:02:29 - root - INFO - update best model。
+2025-09-03 12:02:32 - root - INFO - Epoch [7/100], Train Loss: 0.0027
+2025-09-03 12:02:32 - root - INFO - Epoch [7/100], Validation Loss: 0.0015
+2025-09-03 12:02:32 - root - INFO - update best model。
+2025-09-03 12:02:35 - root - INFO - Epoch [8/100], Train Loss: 0.0024
+2025-09-03 12:02:35 - root - INFO - Epoch [8/100], Validation Loss: 0.0014
+2025-09-03 12:02:35 - root - INFO - update best model。
+2025-09-03 12:02:38 - root - INFO - Epoch [9/100], Train Loss: 0.0022
+2025-09-03 12:02:38 - root - INFO - Epoch [9/100], Validation Loss: 0.0013
+2025-09-03 12:02:38 - root - INFO - update best model。
+2025-09-03 12:02:41 - root - INFO - Epoch [10/100], Train Loss: 0.0021
+2025-09-03 12:02:41 - root - INFO - Epoch [10/100], Validation Loss: 0.0013
+2025-09-03 12:02:41 - root - INFO - update best model。
+2025-09-03 12:02:44 - root - INFO - Epoch [11/100], Train Loss: 0.0021
+2025-09-03 12:02:44 - root - INFO - Epoch [11/100], Validation Loss: 0.0013
+2025-09-03 12:02:44 - root - INFO - update best model。
+2025-09-03 12:02:47 - root - INFO - Epoch [12/100], Train Loss: 0.0020
+2025-09-03 12:02:47 - root - INFO - Epoch [12/100], Validation Loss: 0.0014
+2025-09-03 12:02:47 - root - INFO - patience_counter: 1/5
+2025-09-03 12:02:50 - root - INFO - Epoch [13/100], Train Loss: 0.0021
+2025-09-03 12:02:50 - root - INFO - Epoch [13/100], Validation Loss: 0.0019
+2025-09-03 12:02:50 - root - INFO - patience_counter: 2/5
+2025-09-03 12:02:53 - root - INFO - Epoch [14/100], Train Loss: 0.0022
+2025-09-03 12:02:53 - root - INFO - Epoch [14/100], Validation Loss: 0.0032
+2025-09-03 12:02:53 - root - INFO - patience_counter: 3/5
+2025-09-03 12:02:56 - root - INFO - Epoch [15/100], Train Loss: 0.0025
+2025-09-03 12:02:56 - root - INFO - Epoch [15/100], Validation Loss: 0.0047
+2025-09-03 12:02:56 - root - INFO - patience_counter: 4/5
+2025-09-03 12:02:59 - root - INFO - Epoch [16/100], Train Loss: 0.0030
+2025-09-03 12:02:59 - root - INFO - Epoch [16/100], Validation Loss: 0.0039
+2025-09-03 12:02:59 - root - INFO - patience_counter: 5/5
+2025-09-03 12:02:59 - root - INFO - overfitting detected, stopped。
+2025-09-03 12:02:59 - root - INFO - 模型已成功儲存！
+2025-09-03 12:02:59 - root - INFO - eval loss: 0.0057

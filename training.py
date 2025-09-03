@@ -4,18 +4,20 @@ import numpy as np
 import torch
 from torch.utils.data import TensorDataset, DataLoader
 from sklearn.preprocessing import MinMaxScaler
-#from explainable_KAN import KANLSTMModel # 請確保這個模型定義在你的檔案中
 from torch import nn, optim
 from SP500_dataset import SP500_split
 from myconstant import *
 from itertools import islice
 import tqdm
-from x_lstm import KANLSTMModel
-#from explainable_KAN import KANLSTMModel
+import os
+#from x_lstm import KANLSTMModel
+from explainable_KAN import *
 from timestamp import get_time_stamp
 import logging
+
+path=os.path.join('logs', get_time_stamp()+' '+mode)
 logging.basicConfig(
-    filename=get_time_stamp(), # 日誌檔案名稱
+    filename=path, # 日誌檔案名稱
     filemode='w',       # 'a' 代表追加模式，'w' 代表覆蓋模式
     level=logging.DEBUG, # 設定日誌級別為 DEBUG
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',

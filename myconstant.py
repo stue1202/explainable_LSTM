@@ -2,7 +2,7 @@
 batch_size = 30
 seq_length = 30
 input_dim = 5
-output_dim = 5
+output_dim = 1
 hidden_dim = 8
 num_layers = 1
 epochs = 100

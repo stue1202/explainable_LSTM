@@ -1,1 +1,1 @@
-        print(outputs.shape, y_train.shape)
+KANLSTMModel

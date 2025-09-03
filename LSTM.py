@@ -4,10 +4,8 @@ from torch.nn import Parameter
 import math
 from torchinfo import summary
 from sklearn.preprocessing import MinMaxScaler
-#from kan import *
 from myconstant import *
-from EfficientKAN import KAN
-mode='explainable_lstm'
+mode='original_lstm'
 class KANLSTMCell(nn.Module):
     def __init__(self, input_size, hidden_size):
         super(KANLSTMCell, self).__init__()
@@ -20,9 +18,7 @@ class KANLSTMCell(nn.Module):
         self.bias_ih = Parameter(torch.Tensor(4 * hidden_size))
         self.bias_hh = Parameter(torch.Tensor(4 * hidden_size))
 
-        self.sigmoid = nn.Sigmoid()
-        self.kan_activation = KAN([hidden_size,hidden_size])
-        
+        self.sigmoid = nn.Sigmoid()        
         self.tanh = nn.Tanh()
         self.reset_parameters()
 
@@ -44,7 +40,7 @@ class KANLSTMCell(nn.Module):
         input_gate = self.sigmoid(input_gate)
         forget_gate = self.sigmoid(forget_gate)
         output_gate = self.sigmoid(output_gate)
-        kan_output = self.kan_activation(cell_gate)
+        kan_output = self.tanh(cell_gate)
         c_next = forget_gate * c_prev + input_gate * kan_output
         h_next = output_gate * self.tanh(c_next)
         

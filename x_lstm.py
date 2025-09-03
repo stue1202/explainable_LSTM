@@ -4,11 +4,10 @@ from torch.nn import Parameter
 import math
 from torchinfo import summary
 from sklearn.preprocessing import MinMaxScaler
-from kan import *
+#from kan import *
 from myconstant import *
-
-#from EfficientKAN import KAN
-
+from EfficientKAN import KAN
+mode='x_lstm'
 class KANLSTMCell(nn.Module):
     def __init__(self, input_size, hidden_size):
         super(KANLSTMCell, self).__init__()

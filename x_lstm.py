@@ -50,7 +50,7 @@ class KANLSTMCell(nn.Module):
         # 2. Use the KAN layer for the cell_gate
         # Concatenate the input and hidden state to feed into the KAN layer
         kan_input = torch.cat((input, h_prev), dim=1)
-        cell_gate_kan_output = self.tanh(self.kan_for_cell_gate(kan_input))
+        cell_gate_kan_output = (self.kan_for_cell_gate(kan_input))
 
         # 3. Update the cell state (c_next) and hidden state (h_next)
         c_next = forget_gate * c_prev + input_gate * cell_gate_kan_output

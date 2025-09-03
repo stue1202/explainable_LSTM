@@ -1,0 +1,162 @@
+2025-09-03 14:35:19 - yfinance - DEBUG - Entering download()
+2025-09-03 14:35:19 - yfinance - DEBUG - Disabling multithreading because DEBUG logging enabled
+2025-09-03 14:35:19 - yfinance - DEBUG -  Entering history()
+2025-09-03 14:35:19 - peewee - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_tz_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['^GSPC', 1, 0])
+2025-09-03 14:35:19 - yfinance - DEBUG -   Entering history()
+2025-09-03 14:35:19 - yfinance - DEBUG - ^GSPC: Yahoo GET parameters: {'period1': '2014-01-01 00:00:00-05:00', 'period2': '2025-01-01 00:00:00-05:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2025-09-03 14:35:19 - yfinance - DEBUG - ^GSPC: yfinance received OHLC data: 2014-01-02 14:30:00 -> 2024-12-31 14:30:00
+2025-09-03 14:35:19 - yfinance - DEBUG - ^GSPC: OHLC after cleaning: 2014-01-02 09:30:00-05:00 -> 2024-12-31 09:30:00-05:00
+2025-09-03 14:35:19 - yfinance - DEBUG - ^GSPC: OHLC after combining events: 2014-01-02 00:00:00-05:00 -> 2024-12-31 00:00:00-05:00
+2025-09-03 14:35:19 - yfinance - DEBUG - ^GSPC: yfinance returning OHLC: 2014-01-02 00:00:00-05:00 -> 2024-12-31 00:00:00-05:00
+2025-09-03 14:35:19 - yfinance - DEBUG -   Exiting history()
+2025-09-03 14:35:19 - yfinance - DEBUG -  Exiting history()
+2025-09-03 14:35:19 - yfinance - DEBUG - Exiting download()
+2025-09-03 14:35:23 - root - INFO - Epoch [1/100], Train Loss: 0.1008
+2025-09-03 14:35:23 - root - INFO - Epoch [1/100], Validation Loss: 0.0194
+2025-09-03 14:35:23 - root - INFO - update best model
+2025-09-03 14:35:26 - root - INFO - Epoch [2/100], Train Loss: 0.0029
+2025-09-03 14:35:26 - root - INFO - Epoch [2/100], Validation Loss: 0.0015
+2025-09-03 14:35:26 - root - INFO - update best model
+2025-09-03 14:35:29 - root - INFO - Epoch [3/100], Train Loss: 0.0005
+2025-09-03 14:35:29 - root - INFO - Epoch [3/100], Validation Loss: 0.0012
+2025-09-03 14:35:29 - root - INFO - update best model
+2025-09-03 14:35:32 - root - INFO - Epoch [4/100], Train Loss: 0.0004
+2025-09-03 14:35:32 - root - INFO - Epoch [4/100], Validation Loss: 0.0010
+2025-09-03 14:35:32 - root - INFO - update best model
+2025-09-03 14:35:35 - root - INFO - Epoch [5/100], Train Loss: 0.0004
+2025-09-03 14:35:35 - root - INFO - Epoch [5/100], Validation Loss: 0.0006
+2025-09-03 14:35:35 - root - INFO - update best model
+2025-09-03 14:35:38 - root - INFO - Epoch [6/100], Train Loss: 0.0003
+2025-09-03 14:35:38 - root - INFO - Epoch [6/100], Validation Loss: 0.0006
+2025-09-03 14:35:38 - root - INFO - update best model
+2025-09-03 14:35:41 - root - INFO - Epoch [7/100], Train Loss: 0.0003
+2025-09-03 14:35:41 - root - INFO - Epoch [7/100], Validation Loss: 0.0005
+2025-09-03 14:35:41 - root - INFO - update best model
+2025-09-03 14:35:44 - root - INFO - Epoch [8/100], Train Loss: 0.0002
+2025-09-03 14:35:44 - root - INFO - Epoch [8/100], Validation Loss: 0.0004
+2025-09-03 14:35:44 - root - INFO - update best model
+2025-09-03 14:35:47 - root - INFO - Epoch [9/100], Train Loss: 0.0002
+2025-09-03 14:35:47 - root - INFO - Epoch [9/100], Validation Loss: 0.0004
+2025-09-03 14:35:47 - root - INFO - update best model
+2025-09-03 14:35:49 - root - INFO - Epoch [10/100], Train Loss: 0.0002
+2025-09-03 14:35:50 - root - INFO - Epoch [10/100], Validation Loss: 0.0003
+2025-09-03 14:35:50 - root - INFO - update best model
+2025-09-03 14:35:52 - root - INFO - Epoch [11/100], Train Loss: 0.0002
+2025-09-03 14:35:52 - root - INFO - Epoch [11/100], Validation Loss: 0.0003
+2025-09-03 14:35:52 - root - INFO - update best model
+2025-09-03 14:35:55 - root - INFO - Epoch [12/100], Train Loss: 0.0002
+2025-09-03 14:35:56 - root - INFO - Epoch [12/100], Validation Loss: 0.0003
+2025-09-03 14:35:56 - root - INFO - update best model
+2025-09-03 14:35:59 - root - INFO - Epoch [13/100], Train Loss: 0.0002
+2025-09-03 14:35:59 - root - INFO - Epoch [13/100], Validation Loss: 0.0002
+2025-09-03 14:35:59 - root - INFO - update best model
+2025-09-03 14:36:01 - root - INFO - Epoch [14/100], Train Loss: 0.0002
+2025-09-03 14:36:01 - root - INFO - Epoch [14/100], Validation Loss: 0.0005
+2025-09-03 14:36:01 - root - INFO - patience_counter: 1/5
+2025-09-03 14:36:04 - root - INFO - Epoch [15/100], Train Loss: 0.0002
+2025-09-03 14:36:04 - root - INFO - Epoch [15/100], Validation Loss: 0.0002
+2025-09-03 14:36:04 - root - INFO - update best model
+2025-09-03 14:36:07 - root - INFO - Epoch [16/100], Train Loss: 0.0002
+2025-09-03 14:36:07 - root - INFO - Epoch [16/100], Validation Loss: 0.0002
+2025-09-03 14:36:07 - root - INFO - update best model
+2025-09-03 14:36:10 - root - INFO - Epoch [17/100], Train Loss: 0.0002
+2025-09-03 14:36:10 - root - INFO - Epoch [17/100], Validation Loss: 0.0002
+2025-09-03 14:36:10 - root - INFO - patience_counter: 1/5
+2025-09-03 14:36:13 - root - INFO - Epoch [18/100], Train Loss: 0.0002
+2025-09-03 14:36:13 - root - INFO - Epoch [18/100], Validation Loss: 0.0003
+2025-09-03 14:36:13 - root - INFO - patience_counter: 2/5
+2025-09-03 14:36:15 - root - INFO - Epoch [19/100], Train Loss: 0.0002
+2025-09-03 14:36:16 - root - INFO - Epoch [19/100], Validation Loss: 0.0002
+2025-09-03 14:36:16 - root - INFO - update best model
+2025-09-03 14:36:18 - root - INFO - Epoch [20/100], Train Loss: 0.0001
+2025-09-03 14:36:18 - root - INFO - Epoch [20/100], Validation Loss: 0.0002
+2025-09-03 14:36:18 - root - INFO - patience_counter: 1/5
+2025-09-03 14:36:21 - root - INFO - Epoch [21/100], Train Loss: 0.0001
+2025-09-03 14:36:21 - root - INFO - Epoch [21/100], Validation Loss: 0.0003
+2025-09-03 14:36:21 - root - INFO - patience_counter: 2/5
+2025-09-03 14:36:24 - root - INFO - Epoch [22/100], Train Loss: 0.0001
+2025-09-03 14:36:24 - root - INFO - Epoch [22/100], Validation Loss: 0.0002
+2025-09-03 14:36:24 - root - INFO - patience_counter: 3/5
+2025-09-03 14:36:27 - root - INFO - Epoch [23/100], Train Loss: 0.0001
+2025-09-03 14:36:27 - root - INFO - Epoch [23/100], Validation Loss: 0.0003
+2025-09-03 14:36:27 - root - INFO - patience_counter: 4/5
+2025-09-03 14:36:30 - root - INFO - Epoch [24/100], Train Loss: 0.0001
+2025-09-03 14:36:30 - root - INFO - Epoch [24/100], Validation Loss: 0.0002
+2025-09-03 14:36:30 - root - INFO - update best model
+2025-09-03 14:36:33 - root - INFO - Epoch [25/100], Train Loss: 0.0001
+2025-09-03 14:36:33 - root - INFO - Epoch [25/100], Validation Loss: 0.0002
+2025-09-03 14:36:33 - root - INFO - update best model
+2025-09-03 14:36:36 - root - INFO - Epoch [26/100], Train Loss: 0.0001
+2025-09-03 14:36:36 - root - INFO - Epoch [26/100], Validation Loss: 0.0002
+2025-09-03 14:36:36 - root - INFO - patience_counter: 1/5
+2025-09-03 14:36:39 - root - INFO - Epoch [27/100], Train Loss: 0.0001
+2025-09-03 14:36:39 - root - INFO - Epoch [27/100], Validation Loss: 0.0003
+2025-09-03 14:36:39 - root - INFO - patience_counter: 2/5
+2025-09-03 14:36:42 - root - INFO - Epoch [28/100], Train Loss: 0.0001
+2025-09-03 14:36:42 - root - INFO - Epoch [28/100], Validation Loss: 0.0002
+2025-09-03 14:36:42 - root - INFO - patience_counter: 3/5
+2025-09-03 14:36:45 - root - INFO - Epoch [29/100], Train Loss: 0.0001
+2025-09-03 14:36:45 - root - INFO - Epoch [29/100], Validation Loss: 0.0002
+2025-09-03 14:36:45 - root - INFO - update best model
+2025-09-03 14:36:48 - root - INFO - Epoch [30/100], Train Loss: 0.0001
+2025-09-03 14:36:48 - root - INFO - Epoch [30/100], Validation Loss: 0.0002
+2025-09-03 14:36:48 - root - INFO - patience_counter: 1/5
+2025-09-03 14:36:51 - root - INFO - Epoch [31/100], Train Loss: 0.0001
+2025-09-03 14:36:51 - root - INFO - Epoch [31/100], Validation Loss: 0.0002
+2025-09-03 14:36:51 - root - INFO - update best model
+2025-09-03 14:36:54 - root - INFO - Epoch [32/100], Train Loss: 0.0001
+2025-09-03 14:36:54 - root - INFO - Epoch [32/100], Validation Loss: 0.0002
+2025-09-03 14:36:54 - root - INFO - update best model
+2025-09-03 14:36:57 - root - INFO - Epoch [33/100], Train Loss: 0.0001
+2025-09-03 14:36:57 - root - INFO - Epoch [33/100], Validation Loss: 0.0002
+2025-09-03 14:36:57 - root - INFO - update best model
+2025-09-03 14:36:59 - root - INFO - Epoch [34/100], Train Loss: 0.0001
+2025-09-03 14:37:00 - root - INFO - Epoch [34/100], Validation Loss: 0.0002
+2025-09-03 14:37:00 - root - INFO - patience_counter: 1/5
+2025-09-03 14:37:02 - root - INFO - Epoch [35/100], Train Loss: 0.0001
+2025-09-03 14:37:02 - root - INFO - Epoch [35/100], Validation Loss: 0.0004
+2025-09-03 14:37:02 - root - INFO - patience_counter: 2/5
+2025-09-03 14:37:06 - root - INFO - Epoch [36/100], Train Loss: 0.0001
+2025-09-03 14:37:06 - root - INFO - Epoch [36/100], Validation Loss: 0.0002
+2025-09-03 14:37:06 - root - INFO - patience_counter: 3/5
+2025-09-03 14:37:09 - root - INFO - Epoch [37/100], Train Loss: 0.0001
+2025-09-03 14:37:09 - root - INFO - Epoch [37/100], Validation Loss: 0.0002
+2025-09-03 14:37:09 - root - INFO - update best model
+2025-09-03 14:37:12 - root - INFO - Epoch [38/100], Train Loss: 0.0001
+2025-09-03 14:37:13 - root - INFO - Epoch [38/100], Validation Loss: 0.0002
+2025-09-03 14:37:13 - root - INFO - patience_counter: 1/5
+2025-09-03 14:37:16 - root - INFO - Epoch [39/100], Train Loss: 0.0001
+2025-09-03 14:37:16 - root - INFO - Epoch [39/100], Validation Loss: 0.0001
+2025-09-03 14:37:16 - root - INFO - update best model
+2025-09-03 14:37:20 - root - INFO - Epoch [40/100], Train Loss: 0.0001
+2025-09-03 14:37:20 - root - INFO - Epoch [40/100], Validation Loss: 0.0001
+2025-09-03 14:37:20 - root - INFO - update best model
+2025-09-03 14:37:23 - root - INFO - Epoch [41/100], Train Loss: 0.0001
+2025-09-03 14:37:23 - root - INFO - Epoch [41/100], Validation Loss: 0.0002
+2025-09-03 14:37:23 - root - INFO - patience_counter: 1/5
+2025-09-03 14:37:26 - root - INFO - Epoch [42/100], Train Loss: 0.0001
+2025-09-03 14:37:26 - root - INFO - Epoch [42/100], Validation Loss: 0.0001
+2025-09-03 14:37:26 - root - INFO - patience_counter: 2/5
+2025-09-03 14:37:29 - root - INFO - Epoch [43/100], Train Loss: 0.0001
+2025-09-03 14:37:30 - root - INFO - Epoch [43/100], Validation Loss: 0.0002
+2025-09-03 14:37:30 - root - INFO - patience_counter: 3/5
+2025-09-03 14:37:33 - root - INFO - Epoch [44/100], Train Loss: 0.0001
+2025-09-03 14:37:33 - root - INFO - Epoch [44/100], Validation Loss: 0.0001
+2025-09-03 14:37:33 - root - INFO - update best model
+2025-09-03 14:37:36 - root - INFO - Epoch [45/100], Train Loss: 0.0001
+2025-09-03 14:37:36 - root - INFO - Epoch [45/100], Validation Loss: 0.0002
+2025-09-03 14:37:36 - root - INFO - patience_counter: 1/5
+2025-09-03 14:37:39 - root - INFO - Epoch [46/100], Train Loss: 0.0001
+2025-09-03 14:37:40 - root - INFO - Epoch [46/100], Validation Loss: 0.0002
+2025-09-03 14:37:40 - root - INFO - patience_counter: 2/5
+2025-09-03 14:37:43 - root - INFO - Epoch [47/100], Train Loss: 0.0001
+2025-09-03 14:37:43 - root - INFO - Epoch [47/100], Validation Loss: 0.0002
+2025-09-03 14:37:43 - root - INFO - patience_counter: 3/5
+2025-09-03 14:37:46 - root - INFO - Epoch [48/100], Train Loss: 0.0001
+2025-09-03 14:37:46 - root - INFO - Epoch [48/100], Validation Loss: 0.0002
+2025-09-03 14:37:46 - root - INFO - patience_counter: 4/5
+2025-09-03 14:37:50 - root - INFO - Epoch [49/100], Train Loss: 0.0001
+2025-09-03 14:37:50 - root - INFO - Epoch [49/100], Validation Loss: 0.0002
+2025-09-03 14:37:50 - root - INFO - patience_counter: 5/5
+2025-09-03 14:37:50 - root - INFO - overfitting detected, stopped
+2025-09-03 14:37:50 - root - INFO - eval loss: 0.0006

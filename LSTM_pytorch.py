@@ -1,9 +1,9 @@
 import torch
 import torch.nn as nn
-
-class StandardLSTMModel(nn.Module):
+mode='original_pytorch_lstm'
+class KANLSTMModel(nn.Module):
     def __init__(self, input_dim, hidden_dim, output_dim, num_layers):
-        super(StandardLSTMModel, self).__init__()
+        super(KANLSTMModel, self).__init__()
         self.hidden_dim = hidden_dim
         self.num_layers = num_layers
         

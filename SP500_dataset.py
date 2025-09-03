@@ -50,24 +50,23 @@ def SP500_split(seq_length):
     val_end_seq_idx = val_end_idx - seq_length
 
     X_train = torch.from_numpy(X[:train_end_seq_idx]).float()
-    y_train = torch.from_numpy(y[:train_end_seq_idx]).float()
+    y_train = torch.from_numpy(y[:train_end_seq_idx,3]).float().unsqueeze(1)
     
     X_val = torch.from_numpy(X[train_end_seq_idx:val_end_seq_idx]).float()
-    y_val = torch.from_numpy(y[train_end_seq_idx:val_end_seq_idx]).float()
+    y_val = torch.from_numpy(y[train_end_seq_idx:val_end_seq_idx,3]).float().unsqueeze(1)
 
     X_test = torch.from_numpy(X[val_end_seq_idx:]).float()
-    y_test = torch.from_numpy(y[val_end_seq_idx:]).float()
+    y_test = torch.from_numpy(y[val_end_seq_idx:,3]).float().unsqueeze(1)
 
     # 建立 DataLoader
     train_dataset = TensorDataset(X_train, y_train)
     val_dataset = TensorDataset(X_val, y_val)
     test_dataset = TensorDataset(X_test, y_test)
     
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=False)
+    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
     test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
-    print(f"Batch size: {train_loader.batch_size}")
-    print(X_train.shape, y_train.shape)
+    print(f"Batch size: {train_loader}")
 
     return train_loader, val_loader, test_loader, scaler
 SP500_split(seq_length)

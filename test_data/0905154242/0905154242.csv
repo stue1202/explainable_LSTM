@@ -1,0 +1,2 @@
+seq_length,hidden_dim,num_layers,prediction_step,Dataset,model_name,MSE,R^2,params_numbers,interval_time
+30,32,1,1,^GSPC,original_lstm,0.0005479949411690338,0.9277745,5025,0.003324111302693685

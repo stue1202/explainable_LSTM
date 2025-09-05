@@ -7,7 +7,7 @@ from sklearn.preprocessing import MinMaxScaler
 from explainable_KAN import KANLSTMModel # 請確保這個模型定義在你的檔案中
 from torch import nn, optim
 from SP500_dataset import SP500_split
-from myconstant import *
+from tools.myconstant import *
 # 訓練模型
 #from torch.utils.tensorboard import SummaryWriter
 #writer = SummaryWriter('runs/kan_lstm_exp')

@@ -1,10 +1,12 @@
-from x_lstm import *
-import torch
-import torch.nn as nn
-from myconstant import *
-test_output = torch.randn(30,1)
-test_output = test_output.unsqueeze(-1)
-print(test_output)
-#model = KANLSTMModel(input_dim, hidden_dim, output_dim, num_layers)
-#output = model(test_output)
-#print(test_output.shape, output.shape)
+#from tools.training import *
+#
+#from models.x_lstm import X_LSTM
+#from models.LSTM_original import LSTM
+#(Parameter_number,tarin_loss_list,train_r2_list,val_loss_list,val_r2_list,eval_loss,eval_r2,interval_time)=(train_model(28,8,2,1,"lstm",LSTM,'GC=F'))
+#print(f"Parameter_number: {Parameter_number}\n eval_loss: {eval_loss}\n eval_r2: {eval_r2}\n interval_time: {interval_time}\n train_loss: {tarin_loss_list}\n val_loss: {val_loss_list}\n train_r2: {train_r2_list}\n val_r2: {val_r2_list}")
+import os
+if not os.path.exists("nn"):
+    os.makedirs("nn")
+test_data_path=os.path.join("nn","test.txt")
+with open(test_data_path, 'x') as f:
+    f.write("hello world".encode('utf-8'))

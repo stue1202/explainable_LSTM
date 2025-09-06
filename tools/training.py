@@ -36,7 +36,7 @@ def train_model(seq_length, hidden_dim, num_layers, prediction_step,model_name,m
         model.train()
         train_loss = 0
         criterion2.reset()
-        for X_train, y_train in tqdm.tqdm(train_loader):
+        for X_train, y_train in tqdm.tqdm(train_loader):#batch_size
             X_train = X_train.to(device)
             y_train = y_train.to(device)
             optimizer.zero_grad()
@@ -98,7 +98,7 @@ def train_model(seq_length, hidden_dim, num_layers, prediction_step,model_name,m
             criterion2.update(outputs, y_test)
             total_test_loss += loss.item()
         test_loss = total_test_loss / len(test_loader)
-        test_r2 = criterion2.compute()
+        test_r2 = criterion2.compute().item()
 
     Parameter_number=0
     for name, param in model.named_parameters():

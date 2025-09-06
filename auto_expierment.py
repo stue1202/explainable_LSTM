@@ -30,7 +30,7 @@ params = {
     "patience": 5,
     "prediction_step": [1,3,5],
     "dataset": ['BTC-USD','GC=F','^GSPC'],
-    "average_eval_time":1,
+    "average_eval_time":5,
     "model":[("x_lstm",X_LSTM),("original_lstm",LSTM)]
 }
 def eliminate_outliers(data):
@@ -67,6 +67,9 @@ def run_experiment(params):
                 for hidden_dim in params["hidden_dim"]:
                     for num_layers in params["num_layers"]:
                         for model_name,model_function in params["model"]:
+                            if (model_name=='original_lstm' and hidden_dim==8) or (model_name=='x_lstm' and hidden_dim==32):
+                                continue
+
                             stamp=str(seq_length)+"_"+str(hidden_dim)+"_"+str(num_layers)+"_"+str(prediction_step)+"_"+dataset_name+"_"+model_name
                             train_mse_collection=[];train_r2_collection=[];val_mse_collection=[];val_r2_collection=[];eval_mse_collection=[];eval_r2_collection=[];interval_time_collection=[]
                             csv["seq_length"].append(seq_length)
